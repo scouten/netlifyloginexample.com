@@ -1,10 +1,28 @@
 <html>
 <header>
-    <title>You Found Secrets!</title>
+  <title>You Found Secrets!</title>
+
+  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js">
+  </script>
+
+<script>
+    window.netlifyIdentity.on('login', (user) => {
+      window.netlifyIdentity.refresh(true).then(() => {
+        console.log(user);
+      });
+    });
+
+    window.netlifyIdentity.on('logout', (user) => {
+      window.location.href = '/login';
+    });
+
+    window.netlifyIdentity.init({ container: '#netlify' });
+  </script>
 </header>
 
 <body>
-    <h1>You Found Secrets!</h1>
-    <p>If this was a real site, you'd have found my secret stuff now.</p>
+  <h1>You Found Secrets!</h1>
+  <p>If this was a real site, you'd have found my secret stuff now.</p>
+  <div data-netlify-identity-menu></div>
 </body>
 </html>
