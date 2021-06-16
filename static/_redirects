@@ -1,0 +1,10 @@
+# Anybody can see login page and a few select items.
+/login /login.html 200!
+/favicon.ico /favicon.ico 200!
+/robots.txt /robots.txt 200!
+
+# Family and admin get access if authenticated.
+/* 200! Role=family,admin
+
+# Everyone else bounces to login.
+/* /login 302!
