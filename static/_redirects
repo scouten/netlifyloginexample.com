@@ -1,3 +1,6 @@
+# Customized message templates have to be ungated.
+/message-templates/* 200!
+ 
 # Anybody can see login page and a few select items.
 /login /login.html 200!
 /favicon.ico /favicon.ico 200!
